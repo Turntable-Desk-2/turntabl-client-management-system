@@ -16,3 +16,4 @@ There must be a Console application that allows me to search for clients by name
  ### TEAM MEMBERS
  Isaac Agyen
 Yaa Nuamah Kusi-Fordjour
+Samuel Bartels
