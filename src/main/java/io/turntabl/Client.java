@@ -6,13 +6,15 @@ public class Client {
     private String address;
     private String telephone;
     private String email;
+    private ClientLevel clientLevel;
 
-    public Client(int id, String name, String address, String telephone, String email) {
+    public Client(int id, String name, String address, String telephone, String email, ClientLevel clientLevel) {
         this.id = id;
         this.name = name;
         this.address = address;
         this.telephone = telephone;
         this.email = email;
+        this.clientLevel = clientLevel;
     }
 
     public int getId() {
@@ -33,5 +35,21 @@ public class Client {
 
     public String getEmail() {
         return email;
+    }
+
+    public ClientLevel getClientLevel() {
+        return clientLevel;
+    }
+
+    @Override
+    public String toString() {
+        return "Client{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", address='" + address + '\'' +
+                ", telephone='" + telephone + '\'' +
+                ", email='" + email + '\'' +
+                ", clientLevel=" + clientLevel +
+                '}';
     }
 }

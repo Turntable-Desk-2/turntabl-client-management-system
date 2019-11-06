@@ -2,6 +2,7 @@ package io.turntabl;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Collectors;
 
 public class ClientRegister {
 
@@ -15,8 +16,17 @@ public class ClientRegister {
         return null;
     }
 
-    public List<Client> getClientsLevel(ClientLevel level){
-        return null;
+    public List<Client> getClientsLevel(ClientLevel level) {
+        return clients.stream()
+                .filter(client -> client.getClientLevel().equals(level))
+                .collect(Collectors.toList());
     }
+
+    public List <Client> getClientsById(int clientsId){
+        return clients.stream()
+                .filter(client -> client.getId() == clientsId)
+                .collect(Collectors.toList());
+    }
+
 
 }
