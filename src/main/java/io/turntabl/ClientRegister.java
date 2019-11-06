@@ -12,13 +12,17 @@ public class ClientRegister {
         this.clients = clients;
     }
 
+    public List<Client> getAllClients(){
+        return clients.stream().collect(Collectors.toList());
+    }
+
     public List<Client> getClientsByName(String name){
         return null;
     }
 
     public List<Client> getClientsLevel(ClientLevel level) {
         return clients.stream()
-                .filter(client -> client.getClientLevel().equals(level))
+                .filter(client -> client.getLevel().equals(level))
                 .collect(Collectors.toList());
     }
 

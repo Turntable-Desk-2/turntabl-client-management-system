@@ -6,15 +6,17 @@ public class Client {
     private String address;
     private String telephone;
     private String email;
-    private ClientLevel clientLevel;
 
-    public Client(int id, String name, String address, String telephone, String email, ClientLevel clientLevel) {
+    private ClientLevel level;
+
+    public Client(int id, String name, String address, String telephone, String email, ClientLevel level) {
         this.id = id;
         this.name = name;
         this.address = address;
         this.telephone = telephone;
         this.email = email;
-        this.clientLevel = clientLevel;
+        this.level = level;
+
     }
 
     public int getId() {
@@ -37,8 +39,9 @@ public class Client {
         return email;
     }
 
-    public ClientLevel getClientLevel() {
-        return clientLevel;
+
+    public ClientLevel getLevel() {
+        return level;
     }
 
     @Override
@@ -49,7 +52,7 @@ public class Client {
                 ", address='" + address + '\'' +
                 ", telephone='" + telephone + '\'' +
                 ", email='" + email + '\'' +
-                ", clientLevel=" + clientLevel +
+                ", level=" + level +
                 '}';
     }
 }
