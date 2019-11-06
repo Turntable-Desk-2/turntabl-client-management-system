@@ -11,5 +11,9 @@ The Turntabl Client Management System (TCMS) must store the following informatio
     Email Address
 
 This information must be persisted even when the application is not running.
-
 There must be a Console application that allows me to search for clients by name, enter new client details, and delete a client.
+
+ # TEAM MEMBERS
+ ### Isaac Agyen
+### Yaa Nuamah Kusi-Fordjour
+### Samuel Bartels
