@@ -40,8 +40,6 @@ public class NewClient {
             System.out.println(e);
         }
 
-
-
     }
 
 }
