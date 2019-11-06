@@ -2,6 +2,7 @@ package io.turntabl;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Collectors;
 
 public class ClientRegister {
 
@@ -9,6 +10,10 @@ public class ClientRegister {
 
     public ClientRegister(List<Client> clients) {
         this.clients = clients;
+    }
+
+    public List<Client> getAllClients(){
+        return clients.stream().collect(Collectors.toList());
     }
 
     public List<Client> getClientsByName(String name){
