@@ -43,16 +43,16 @@ public class Client {
     public ClientLevel getLevel() {
         return level;
     }
-
-    @Override
-    public String toString() {
-        return "Client{" +
-                "id=" + id +
-                ", name='" + name + '\'' +
-                ", address='" + address + '\'' +
-                ", telephone='" + telephone + '\'' +
-                ", email='" + email + '\'' +
-                ", level=" + level +
-                '}';
-    }
+//
+//    @Override
+//    public String toString() {
+//        return "Client{" +
+//                "id=" + id +
+//                ", name='" + name + '\'' +
+//                ", address='" + address + '\'' +
+//                ", telephone='" + telephone + '\'' +
+//                ", email='" + email + '\'' +
+//                ", level=" + level +
+//                '}';
+//    }
 }

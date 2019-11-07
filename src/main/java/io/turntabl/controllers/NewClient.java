@@ -10,7 +10,9 @@ import java.util.Arrays;
 import java.util.Scanner;
 
 public class NewClient {
-    public void newClient(){
+    public static void newClient(){
+        GenerateID id = new GenerateID();
+
         Scanner sc = new Scanner(System.in);
 
         System.out.println("Name: ");
@@ -25,21 +27,23 @@ public class NewClient {
         System.out.println("Email: ");
         String email = sc.nextLine();
 
-        ClientRegister reg = new ClientRegister(Arrays.asList(new Client(1, name, address, telephone, email, ClientLevel.GOLD)));
-        System.out.println("Client Added Successfully\n" + reg.getAllClients());
-
-        try{
-            File file = new File("out.txt");
-            FileWriter fw = new FileWriter(file);
-            PrintWriter pw = new PrintWriter(fw);
-
-            pw.println(new Client(1, name, address, telephone, email, ClientLevel.GOLD));
-            pw.close();
-
-        }catch (IOException e){
-            System.out.println(e);
+        System.out.println("=====Choose Client Level===== \n1. GOLD\n2. PREMIUM\n3. PLATINUM");
+        Integer res = sc.nextInt();
+        ClientLevel level = null;
+        switch (res){
+            case 1:
+              level = ClientLevel.GOLD;
+              break;
+            case 2:
+                level = ClientLevel.PREMIUM;
+                break;
+            case 3:
+                level = ClientLevel.PLATINUM;
+                break;
+            default:
+                level = ClientLevel.GOLD;
         }
-
+        PersistData.writeFile(id.getId(5), name, address, telephone, email, level);
     }
 
 }
