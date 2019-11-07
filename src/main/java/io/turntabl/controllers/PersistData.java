@@ -53,4 +53,18 @@ public class PersistData {
         return null;
     }
 
+    public static List<String> updateClient(String id){
+        try {
+            File file = new File("./store/store.txt");
+            List<String> out = Files.lines(file.toPath())
+                    .filter(line -> !line.contains(id))
+                    .collect(Collectors.toList());
+            Files.write(file.toPath(), out, StandardOpenOption.WRITE, StandardOpenOption.TRUNCATE_EXISTING);
+        }catch (Exception e){
+            System.out.println();
+        }
+        return null;
+    }
+
+        
 }
