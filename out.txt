@@ -1,1 +1,1 @@
-Client{id=1, name='Isaac', address='Darkuman- St Lapaz Rd', telephone='+23355678999', email='email@test.io', level=GOLD}
+Client{id=1, name='grgr', address='gr', telephone='rgr', email='rgr', level=GOLD}
