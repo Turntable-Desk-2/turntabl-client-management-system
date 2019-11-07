@@ -38,7 +38,11 @@ public class Model {
                     System.out.println("Update Client Info");
                     break;
                 case 4:
-                    System.out.println("Remove Client");
+                    System.out.println("Enter client Id to Remove: ");
+                    String idtoRemove = sc.next();
+                    PersistData.removeClient(idtoRemove);
+                    System.out.println("\n-------------------------------\nClient Removed Successfully\n----------------------------\n");
+                    break;
                 case 5:
                     System.out.println("=====Search for Clients By: \n1. Name\n2. Level\n3. ID");
                     Integer input = sc.nextInt();
