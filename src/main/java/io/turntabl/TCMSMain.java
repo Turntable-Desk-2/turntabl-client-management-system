@@ -11,8 +11,6 @@ public class TCMSMain {
 
         //Start the Application Index page
         Model.indexPage();
-//        PersistData.readFile();
-
     }
 
 }
