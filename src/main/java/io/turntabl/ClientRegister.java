@@ -19,7 +19,7 @@ public class ClientRegister {
 
     public List<Client> getClientsByName(String name){
         return clients.stream()
-                .filter(client -> client.getName().equals(name))
+                .filter(client -> client.getName().toLowerCase().contains(name.toLowerCase()))
                 .collect(Collectors.toList());
     }
 
