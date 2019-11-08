@@ -53,7 +53,33 @@ public class PersistData {
         return null;
     }
 
-    
+    public static List<String> updateClient(String id, String text, String newText){
+        List<String> updatedFile =  readFile().stream().filter(l -> l.contains(id))
+                .map(line -> line.replaceAll(text, newText))
+                .collect(Collectors.toList());
+        removeClient(id);
+        try {
+            File file = new File("./store/store.txt");
+
+            List<String> out = Files.lines(file.toPath())
+                    .filter(line -> !line.contains(id))
+                    .collect(Collectors.toList());
+            Files.write(file.toPath(), out, StandardOpenOption.WRITE, StandardOpenOption.TRUNCATE_EXISTING);
+
+            FileWriter fw = new FileWriter(file, true);
+            PrintWriter pw = new PrintWriter(fw);
+            for(String update : updatedFile){
+                pw.print(update);
+                pw.close();
+            }
+
+
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+        }
+
+        return null;
+    }
 
 
 }
