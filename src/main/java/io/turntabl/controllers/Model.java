@@ -36,12 +36,15 @@ public class Model {
                     System.out.println("Enter id of Client you want to Update: ");
                     Integer idToUpdate = sc.nextInt();
                     System.out.println("CLIENT:\n" + searchByID(idToUpdate));
-                    System.out.println("What do you want to Update?\n1. Name\n2. Address\n3. Telephone\n4. Email\n5. Level");
-                    Integer op = sc.nextInt();
-                    switch (op){
-                        case 1:
-                             break;
-                    }
+
+                    System.out.println("What do you want to Update?");
+                    String what = sc.next();
+
+                    System.out.println("Replace with?");
+                    String replaceWith = sc.next();
+
+                    PersistData.updateClient(idToUpdate.toString(), what, replaceWith);
+                    System.out.println("\n-------------------------------\nClient info Updated Successfully\n----------------------------\n");
                     break;
                 case 4:
                     System.out.println("Enter client Id to Remove: ");
