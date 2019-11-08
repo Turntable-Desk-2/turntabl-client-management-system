@@ -32,3 +32,10 @@ tasks.startScripts {
 application {
     mainClassName = 'io.turntabl.TCMSMain'
 }
+
+jar {
+    manifest {
+        attributes 'Main-Class': 'io.turntabl.TCMSMain'
+    }
+    from { configurations.compile.collect { it.isDirectory() ? it : zipTree(it) } }
+}
