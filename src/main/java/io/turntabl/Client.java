@@ -53,6 +53,6 @@ public class Client {
                 ", telephone='" + telephone + '\'' +
                 ", email='" + email + '\'' +
                 ", level=" + level +
-                '}';
+                '}' + '\n';
     }
 }
