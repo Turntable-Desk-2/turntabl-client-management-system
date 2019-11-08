@@ -29,13 +29,22 @@ public class Model {
                     NewClient.newClient();
                     break;
                 case 2:
-                    System.out.println("=====All Clients=====");
-                    for(String client : PersistData.readFile()){
-                        System.out.println(client);
-                    }
+                    getAllData();
                     break;
                 case 3:
-                    System.out.println("Update Client Info");
+                    getAllData();
+                    System.out.println("Enter id of Client you want to Update: ");
+                    Integer idToUpdate = sc.nextInt();
+                    System.out.println("CLIENT:\n" + searchByID(idToUpdate));
+
+                    System.out.println("What do you want to Update?");
+                    String what = sc.next();
+
+                    System.out.println("Replace with?");
+                    String replaceWith = sc.next();
+
+                    PersistData.updateClient(idToUpdate.toString(), what, replaceWith);
+                    System.out.println("\n-------------------------------\nClient info Updated Successfully\n----------------------------\n");
                     break;
                 case 4:
                     System.out.println("Enter client Id to Remove: ");
@@ -115,4 +124,13 @@ public class Model {
         }
         return clients;
     }
+
+    public static void getAllData(){
+        System.out.println("=====All Clients=====");
+        for(String client : PersistData.readFile()){
+            System.out.println(client);
+        }
+    }
+
+
 }
