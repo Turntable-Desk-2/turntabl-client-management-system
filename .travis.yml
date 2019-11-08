@@ -1,3 +1,5 @@
 language: java
 script:
+script:
+  - ./gradlew test
   - chmod +x gradlew 
