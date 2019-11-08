@@ -16,4 +16,8 @@ There must be a Console application that allows me to search for clients by name
 
 
 CLIENT MANAGEMENT INSTALLATION STEPS 
-1.
+1. Navigate to build > libs
+2. Enter Java -jar turntable-client-management-system-1.0-SNAPSHOT.jar
+Application has started
+
+To Quit the apllication after start, Enter 0
