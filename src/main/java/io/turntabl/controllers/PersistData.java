@@ -14,7 +14,7 @@ import java.util.stream.Stream;
 public class PersistData {
     public static void writeFile(int id, String name, String address, String telephone, String email, ClientLevel level) {
         try {
-            File file = new File("./store/store.txt");
+            File file = new File("store.txt");
             FileWriter fw = new FileWriter(file, true);
             PrintWriter pw = new PrintWriter(fw);
             pw.print("\n" + id + "---" + name + "---" + address + "---" + telephone + "---" + email + "---" + level);
@@ -28,7 +28,7 @@ public class PersistData {
     public static List<String> readFile(){
         List<String> details = new ArrayList<>();
         try {
-            File file = new File("./store/store.txt");
+            File file = new File("store.txt");
             Scanner reader = new Scanner(file);
 
             while (reader.hasNextLine()) {
@@ -43,7 +43,7 @@ public class PersistData {
 
     public static List<String> removeClient(String id){
         try {
-            File file = new File("./store/store.txt");
+            File file = new File("store.txt");
             List<String> out = Files.lines(file.toPath())
                     .filter(line -> !line.contains(id))
                     .collect(Collectors.toList());
@@ -60,7 +60,7 @@ public class PersistData {
                 .collect(Collectors.toList());
         removeClient(id);
         try {
-            File file = new File("./store/store.txt");
+            File file = new File("store.txt");
 
             List<String> out = Files.lines(file.toPath())
                     .filter(line -> !line.contains(id))
