@@ -56,39 +56,91 @@ public class Model {
                     System.out.println("=====Search for Clients By: \n1. Name\n2. Level\n3. ID");
                     Integer input = sc.nextInt();
                     Integer level = null;
-                    switch (input){
+                    switch (input) {
                         case 1:
                             System.out.println("Enter Name: ");
                             String name = sc.next();
-                            switch (name){
+                            switch (name) {
                                 case " ":
                                     System.out.println("Enter client name");
                                     break;
                                 default:
-                                    System.out.println(searchByName(name));
+                                    System.out.println("---------------------------------------------------------------------------------------------------------------------------------------");
+                                    System.out.printf("%5s %20s %20s %15s %20s %15s", "ID", "NAME", "ADDRESS", "TEL NO.", "EMAIL", "LEVEL");
+                                    System.out.println();
+                                    System.out.println("--------------------------------------------------------------------------------------------------------------------------------------");
+                                    for (Client client : searchByName(name)) {
+                                        System.out.format("%5s %20s %20s %15s %25s %15s",
+                                                client.getId(), client.getName(), client.getAddress(), client.getTelephone(), client.getEmail(), client.getLevel());
+                                        System.out.println();
+                                    }
+                                    System.out.println("---------------------------------------------------------------------------------------------------------------------------------------");
+
+                                    //System.out.println(searchByName(name));
                             }
                             break;
                         case 2:
                             System.out.println("Enter Level: \n1. Gold\n2. Premium\n3. Platinum\n");
                             Integer in = sc.nextInt();
-                            switch (in){
+                            switch (in) {
                                 case 1:
-                                    System.out.println(searchByLevel(ClientLevel.GOLD));
+
+                                    System.out.println("---------------------------------------------------------------------------------------------------------------------------------------");
+                                    System.out.printf("%5s %20s %20s %15s %20s %15s", "ID", "NAME", "ADDRESS", "TEL NO.", "EMAIL", "LEVEL");
+                                    System.out.println();
+                                    System.out.println("--------------------------------------------------------------------------------------------------------------------------------------");
+                                    for (Client client : searchByLevel(ClientLevel.GOLD)) {
+                                        System.out.format("%5s %20s %20s %15s %25s %15s",
+                                                client.getId(), client.getName(), client.getAddress(), client.getTelephone(), client.getEmail(), client.getLevel());
+                                    }
+                                    System.out.println();
+
+
+                                    //System.out.println(searchByLevel(ClientLevel.GOLD));
                                     break;
                                 case 2:
-                                    System.out.println(searchByLevel(ClientLevel.PREMIUM));
+                                    System.out.println("---------------------------------------------------------------------------------------------------------------------------------------");
+                                    System.out.printf("%5s %20s %20s %15s %20s %15s", "ID", "NAME", "ADDRESS", "TEL NO.", "EMAIL", "LEVEL");
+                                    System.out.println();
+                                    System.out.println("--------------------------------------------------------------------------------------------------------------------------------------");
+                                    for (Client client : searchByLevel(ClientLevel.PREMIUM)) {
+                                        System.out.format("%5s %20s %20s %15s %25s %15s",
+                                                client.getId(), client.getName(), client.getAddress(), client.getTelephone(), client.getEmail(), client.getLevel());
+                                    }
+                                    System.out.println();
                                     break;
                                 case 3:
-                                    System.out.println(searchByLevel(ClientLevel.PLATINUM));
-                                    break;
+                                    System.out.println("---------------------------------------------------------------------------------------------------------------------------------------");
+                                    System.out.printf("%5s %20s %20s %15s %20s %15s", "ID", "NAME", "ADDRESS", "TEL NO.", "EMAIL", "LEVEL");
+                                    System.out.println();
+                                    System.out.println("--------------------------------------------------------------------------------------------------------------------------------------");
+                                    for (Client client : searchByLevel(ClientLevel.PLATINUM))
+                                        System.out.format("%5s %20s %20s %15s %25s %15s",
+                                                client.getId(), client.getName(), client.getAddress(), client.getTelephone(), client.getEmail(), client.getLevel());
+                                    // System.out.println(searchByLevel(ClientLevel.PLATINUM));
                                 default:
                                     System.out.println("Enter Valid Client Level");
+                                    break;
+
                             }
+                            System.out.println();
                             break;
+                            
                         case 3:
                             System.out.println("Enter Id: ");
                             int id = sc.nextInt();
-                            System.out.println(searchByID(id));
+
+                                System.out.println("---------------------------------------------------------------------------------------------------------------------------------------");
+                                System.out.printf("%5s %20s %20s %15s %20s %15s", "ID", "NAME", "ADDRESS", "TEL NO.", "EMAIL", "LEVEL");
+                                System.out.println();
+                                System.out.println("--------------------------------------------------------------------------------------------------------------------------------------");
+                                for (Client client : searchByID(id)){
+                                    System.out.format("%5s %20s %20s %15s %25s %15s",
+                                            client.getId(), client.getName(), client.getAddress(), client.getTelephone(), client.getEmail(), client.getLevel());
+                                }
+                            System.out.println();
+
+                            //System.out.println(searchByID(id));
                             break;
                         default:
                             break;
