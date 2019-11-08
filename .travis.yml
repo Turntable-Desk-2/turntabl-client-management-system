@@ -1,6 +1,5 @@
 language: java
 script:
-script:
   - ./gradlew test
   
   before_install:
