@@ -1,6 +1,7 @@
 plugins {
     id 'java'
-   
+    id 'application'
+}
 
 group 'io.turntabl'
 version '1.0-SNAPSHOT'
@@ -13,4 +14,21 @@ repositories {
 
 dependencies {
     testCompile group: 'junit', name: 'junit', version: '4.12'
+}
+
+application {
+    mainClassName = 'io.turntabl.TCMSMain'
+}
+
+//this will build a start script in
+tasks.startScripts {
+    doLast {
+        def scriptFile = file "${outputDir}/${applicationName}"
+        scriptFile.text = scriptFile.text.replace('CLASSPATH=$APP_HOME/lib', 'CLASSPATH=$APP_HOME/libs')
+    }
+}
+
+//put your package-qualified main class name here
+application {
+    mainClassName = 'io.turntabl.TCMSMain'
 }
