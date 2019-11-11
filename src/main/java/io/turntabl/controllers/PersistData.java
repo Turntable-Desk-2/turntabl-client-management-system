@@ -12,12 +12,15 @@ import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
 public class PersistData {
+    public static final String RESET = "\u001B[0m";
+    public static final String RED = "\u001B[31m";
+
     public static void writeFile(int id, String name, String address, String telephone, String email, ClientLevel level) {
         try {
             File file = new File("store.txt");
             FileWriter fw = new FileWriter(file, true);
             PrintWriter pw = new PrintWriter(fw);
-            pw.print("\n" + id + "---" + name + "---" + address + "---" + telephone + "---" + email + "---" + level);
+            pw.print(id + "---" + name + "---" + address + "---" + telephone + "---" + email + "---" + level + "\n");
             pw.close();
 
         } catch (Exception e) {
@@ -36,7 +39,7 @@ public class PersistData {
                 details.add(data);
             }
         }catch (FileNotFoundException e){
-            System.out.println("File not Found");
+            System.out.println(RED + "Client not Found" +RESET);
         }
         return details;
     }
@@ -49,7 +52,7 @@ public class PersistData {
                     .collect(Collectors.toList());
             Files.write(file.toPath(), out, StandardOpenOption.WRITE, StandardOpenOption.TRUNCATE_EXISTING);
         }catch (Exception e){
-            System.out.println();
+            System.out.println(e.getMessage());
         }
         return null;
     }
